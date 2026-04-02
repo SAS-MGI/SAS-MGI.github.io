@@ -4,7 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MGI – Transactions Immobilières</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" crossorigin="anonymous" />
+  <style>
+    /* Fallback polices si Google Fonts bloqué */
+    :root {
+      --font-titre: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+      --font-corps: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+  </style>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -15,8 +22,8 @@
       --or-clair: #d4b896;
       --gris: #5a5a5a;
       --gris-clair: #e8e4de;
-      --font-titre: 'Cormorant Garamond', serif;
-      --font-corps: 'DM Sans', sans-serif;
+      --font-titre: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-corps: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -144,17 +151,17 @@
     .hero-image-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(184,151,106,0.15) 0%, rgba(14,14,14,0.7) 100%);
+      background: linear-gradient(135deg, rgba(184,151,106,0.08) 0%, rgba(14,14,14,0.45) 100%);
       z-index: 1;
     }
 
     .hero-image-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80');
+      background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2400&q=100&fit=crop');
       background-size: cover;
       background-position: center;
-      opacity: 0.6;
+      opacity: 0.85;
       transform: scale(1.05);
       transition: transform 8s ease;
     }
@@ -376,13 +383,9 @@
 
     /* ─── ANIMATIONS ─── */
     .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-in.visible {
       opacity: 1;
       transform: none;
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .fade-in:nth-child(2) { transition-delay: 0.1s; }
     .fade-in:nth-child(3) { transition-delay: 0.2s; }
